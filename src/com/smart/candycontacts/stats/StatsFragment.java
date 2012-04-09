@@ -1,4 +1,4 @@
-package com.sony.candycontacts.stats;
+package com.smart.candycontacts.stats;
 
 import android.app.Fragment;
 

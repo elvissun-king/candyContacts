@@ -1,4 +1,4 @@
-package com.sony.candycontacts.calllog;
+package com.smart.candycontacts.calllog;
 
 import android.app.Fragment;
 

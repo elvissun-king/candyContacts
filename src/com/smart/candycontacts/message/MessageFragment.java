@@ -1,4 +1,4 @@
-package com.sony.candycontacts.message;
+package com.smart.candycontacts.message;
 
 import android.app.Fragment;
 

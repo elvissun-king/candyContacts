@@ -1,4 +1,4 @@
-package com.sony.candycontacts.contacts;
+package com.smart.candycontacts.contacts;
 
 import com.sony.candycontacts.R;
 

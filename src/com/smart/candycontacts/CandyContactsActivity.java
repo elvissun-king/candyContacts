@@ -1,9 +1,10 @@
-package com.sony.candycontacts;
+package com.smart.candycontacts;
 
-import com.sony.candycontacts.calllog.CallLogFragment;
-import com.sony.candycontacts.contacts.ContactsFragment;
-import com.sony.candycontacts.message.MessageFragment;
-import com.sony.candycontacts.stats.StatsFragment;
+import com.smart.candycontacts.calllog.CallLogFragment;
+import com.smart.candycontacts.contacts.ContactsFragment;
+import com.smart.candycontacts.message.MessageFragment;
+import com.smart.candycontacts.stats.StatsFragment;
+import com.sony.candycontacts.R;
 
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
