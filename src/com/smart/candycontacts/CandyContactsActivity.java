@@ -4,7 +4,7 @@ import com.smart.candycontacts.calllog.CallLogFragment;
 import com.smart.candycontacts.contacts.ContactsFragment;
 import com.smart.candycontacts.message.MessageFragment;
 import com.smart.candycontacts.stats.StatsFragment;
-import com.sony.candycontacts.R;
+import com.smart.candycontacts.R;
 
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;

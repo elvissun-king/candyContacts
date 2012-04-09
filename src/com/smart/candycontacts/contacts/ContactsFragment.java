@@ -1,6 +1,6 @@
 package com.smart.candycontacts.contacts;
 
-import com.sony.candycontacts.R;
+import com.smart.candycontacts.R;
 
 import android.app.Activity;
 import android.app.Fragment;
