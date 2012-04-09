@@ -17,7 +17,7 @@
  * @author Fei Sun (fei.sun@sonyericsson.com)
  */
 
-package com.sony.candycontacts;
+package com.sony.candycontacts.calllog;
 
 import android.app.Fragment;
 

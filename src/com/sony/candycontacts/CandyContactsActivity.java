@@ -1,7 +1,11 @@
 
 package com.sony.candycontacts;
 
+import com.sony.candycontacts.calllog.CallLogFragment;
 import com.sony.candycontacts.contacts.ContactsFragment;
+import com.sony.candycontacts.message.MessageFragment;
+import com.sony.candycontacts.stats.StatsFragment;
+
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Activity;
