@@ -1,4 +1,3 @@
-
 package com.sony.candycontacts;
 
 import com.sony.candycontacts.calllog.CallLogFragment;
@@ -101,10 +100,13 @@ public class CandyContactsActivity extends Activity {
 
         /**
          * Constructor used each time a new tab is created.
-         *
-         * @param activity The host Activity, used to instantiate the fragment
-         * @param tag The identifier tag for the fragment
-         * @param clz The fragment's Class, used to instantiate the fragment
+         * 
+         * @param activity
+         *            The host Activity, used to instantiate the fragment
+         * @param tag
+         *            The identifier tag for the fragment
+         * @param clz
+         *            The fragment's Class, used to instantiate the fragment
          */
         public TabListener(Activity activity, String tag, Class<T> clz) {
             mActivity = activity;
@@ -114,7 +116,7 @@ public class CandyContactsActivity extends Activity {
 
         /*
          * (non-Javadoc)
-         *
+         * 
          * @see
          * android.app.ActionBar.TabListener#onTabSelected(android.app.ActionBar
          * .Tab, android.app.FragmentTransaction)
@@ -134,7 +136,7 @@ public class CandyContactsActivity extends Activity {
 
         /*
          * (non-Javadoc)
-         *
+         * 
          * @see
          * android.app.ActionBar.TabListener#onTabUnselected(android.app.ActionBar
          * .Tab, android.app.FragmentTransaction)
@@ -148,7 +150,7 @@ public class CandyContactsActivity extends Activity {
 
         /*
          * (non-Javadoc)
-         *
+         * 
          * @see
          * android.app.ActionBar.TabListener#onTabReselected(android.app.ActionBar
          * .Tab, android.app.FragmentTransaction)
