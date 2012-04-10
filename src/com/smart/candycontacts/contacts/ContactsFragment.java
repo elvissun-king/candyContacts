@@ -21,10 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author 28850470
- *
- */
+
 public class ContactsFragment extends Fragment {
 
     // Contacts List
