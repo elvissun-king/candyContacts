@@ -11,6 +11,7 @@
         android:label="@string/app_name">
         <activity
             android:name="com.smart.candycontacts.CandyContactsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name">
             <intent-filter>
                 <action
@@ -23,7 +24,6 @@
     </application>
 
     <uses-sdk
-        android:minSdkVersion="4"
         android:targetSdkVersion="11" />
 
 
