@@ -1,1 +1,5 @@
-This is a contact app for Android
+This is a contact App for Android
+
+1 issue.
+Orientation change several times will cause App crash.
+Out of memory. Reason is the handle way of Bitmap for contact photo is may be not reasonable.

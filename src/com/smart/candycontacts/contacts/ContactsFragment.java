@@ -62,6 +62,8 @@ public class ContactsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getContacts();
+        mAdapter = new ContactListAdapter(getActivity(), mListData);
     }
 
     @Override
@@ -72,8 +74,6 @@ public class ContactsFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        getContacts();
-        mAdapter = new ContactListAdapter(getActivity(), mListData);
         mContactsList = (ListView)getActivity().findViewById(R.id.contactsList);
         mContactsList.setAdapter(mAdapter);
     }
@@ -85,19 +85,16 @@ public class ContactsFragment extends Fragment {
 
     @Override
     public void onPause() {
-        // TODO Auto-generated method stub
         super.onPause();
     }
 
     @Override
     public void onDestroy() {
-        // TODO Auto-generated method stub
         super.onDestroy();
     }
 
     @Override
     public void onDetach() {
-        // TODO Auto-generated method stub
         super.onDetach();
     }
 
@@ -172,8 +169,8 @@ public class ContactsFragment extends Fragment {
             ViewHolder holder = null;
             if (convertView == null) {
                 holder = new ViewHolder();
-                convertView = LayoutInflater.from(mContext).inflate(
-                        R.layout.contact_list_item, null);
+                convertView = LayoutInflater.from(mContext).inflate(R.layout.contact_list_item,
+                        null);
                 holder.mImage = (ImageView)convertView.findViewById(R.id.contactPhoto);
                 holder.mText = (TextView)convertView.findViewById(R.id.contactName);
                 convertView.setTag(holder);

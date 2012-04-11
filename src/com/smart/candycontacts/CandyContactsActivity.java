@@ -1,3 +1,4 @@
+
 package com.smart.candycontacts;
 
 import com.smart.candycontacts.calllog.CallLogFragment;
@@ -51,10 +52,9 @@ public class CandyContactsActivity extends Activity {
         // requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.candycontacts_layout);
         final ActionBar actionBar = getActionBar();
-        Log.i(TAG, "actionBar = " + actionBar);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        actionBar.setDisplayOptions(0, ActionBar.DISPLAY_SHOW_TITLE);
         // Remove the activity title to make space for tab-
-        actionBar.setDisplayShowTitleEnabled(false);
         mContactsFragment = new ContactsFragment();
         mCallLogFragment = new CallLogFragment();
         // container = (LinearLayout)findViewById(R.id.container);
@@ -101,13 +101,10 @@ public class CandyContactsActivity extends Activity {
 
         /**
          * Constructor used each time a new tab is created.
-         * 
-         * @param activity
-         *            The host Activity, used to instantiate the fragment
-         * @param tag
-         *            The identifier tag for the fragment
-         * @param clz
-         *            The fragment's Class, used to instantiate the fragment
+         *
+         * @param activity The host Activity, used to instantiate the fragment
+         * @param tag The identifier tag for the fragment
+         * @param clz The fragment's Class, used to instantiate the fragment
          */
         public TabListener(Activity activity, String tag, Class<T> clz) {
             mActivity = activity;
@@ -117,7 +114,7 @@ public class CandyContactsActivity extends Activity {
 
         /*
          * (non-Javadoc)
-         * 
+         *
          * @see
          * android.app.ActionBar.TabListener#onTabSelected(android.app.ActionBar
          * .Tab, android.app.FragmentTransaction)
@@ -137,7 +134,7 @@ public class CandyContactsActivity extends Activity {
 
         /*
          * (non-Javadoc)
-         * 
+         *
          * @see
          * android.app.ActionBar.TabListener#onTabUnselected(android.app.ActionBar
          * .Tab, android.app.FragmentTransaction)
@@ -151,7 +148,7 @@ public class CandyContactsActivity extends Activity {
 
         /*
          * (non-Javadoc)
-         * 
+         *
          * @see
          * android.app.ActionBar.TabListener#onTabReselected(android.app.ActionBar
          * .Tab, android.app.FragmentTransaction)
