@@ -15,7 +15,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
-import android.provider.ContactsContract.PhoneLookup;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,18 +22,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ListAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.SimpleAdapter;
-import android.widget.SimpleCursorAdapter;
 import android.widget.SearchView.OnQueryTextListener;
+import android.widget.TextView;
 
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class ContactsFragment extends Fragment {
 
@@ -66,7 +62,6 @@ public class ContactsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -77,6 +72,10 @@ public class ContactsFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+        getContacts();
+        mAdapter = new ContactListAdapter(getActivity(), mListData);
+        mContactsList = (ListView)getActivity().findViewById(R.id.contactsList);
+        mContactsList.setAdapter(mAdapter);
     }
 
     @Override
@@ -128,11 +127,11 @@ public class ContactsFragment extends Fragment {
     private class ContactListAdapter extends BaseAdapter {
         private Context mContext;
 
-        private List<ContactsInfo> mdata;
+        private List<ContactsInfo> mData;
 
         public ContactListAdapter(Context context, List<ContactsInfo> data) {
             mContext = context;
-            mdata = data;
+            mData = data;
         }
 
         /*
@@ -141,7 +140,7 @@ public class ContactsFragment extends Fragment {
          * @see android.widget.Adapter#getCount()
          */
         public int getCount() {
-            return mdata.size();
+            return mData.size();
         }
 
         /*
@@ -150,7 +149,7 @@ public class ContactsFragment extends Fragment {
          * @see android.widget.Adapter#getItem(int)
          */
         public Object getItem(int position) {
-            return null;
+            return mData.get(position);
         }
 
         /*
@@ -160,7 +159,7 @@ public class ContactsFragment extends Fragment {
          */
         public long getItemId(int position) {
             // TODO Auto-generated method stub
-            return 0;
+            return position;
         }
 
         /*
@@ -170,14 +169,27 @@ public class ContactsFragment extends Fragment {
          * android.view.ViewGroup)
          */
         public View getView(int position, View convertView, ViewGroup parent) {
-            // TODO Auto-generated method stub
-            return null;
+            ViewHolder holder = null;
+            if (convertView == null) {
+                holder = new ViewHolder();
+                convertView = LayoutInflater.from(mContext).inflate(
+                        R.layout.contact_list_item, null);
+                holder.mImage = (ImageView)convertView.findViewById(R.id.contactPhoto);
+                holder.mText = (TextView)convertView.findViewById(R.id.contactName);
+                convertView.setTag(holder);
+            } else {
+                holder = (ViewHolder)convertView.getTag();
+            }
+            // Set contact name
+            holder.mText.setText(mData.get(position).getName());
+            // Set contact photo
+            holder.mImage.setImageBitmap(mData.get(position).getPhoto());
+            return convertView;
         }
-
     }
 
     /**
-     * get the contacts info
+     * get the contacts info, add contacts info into mListData.
      */
     private void getContacts() {
         ContentResolver resolver = getActivity().getContentResolver();
@@ -212,5 +224,12 @@ public class ContactsFragment extends Fragment {
                 mListData.add(info);
             }
         }
+    }
+
+    public static class ViewHolder {
+
+        private ImageView mImage;
+
+        private TextView mText;
     }
 }
